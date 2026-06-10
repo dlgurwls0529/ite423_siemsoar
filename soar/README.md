@@ -1,25 +1,26 @@
-# Norder Sentry SIEM
+# Norder Sentry SOAR
 
-Sentry 이벤트를 보안 운영 데이터로 재분류하는 SIEM 파트입니다.
+Sentry-SIEM이 생성한 incident를 입력으로 받아 대응 Playbook을 실행하는 SOAR 파트
 
 ## 담당 범위
 
-- Sentry 이벤트 입력
-- 보안 탐지 시나리오 적용
-- 여러 Sentry 이벤트를 security incident로 묶기
-- triage 로직으로 위험도와 공격 가능성 판단
-- SOAR가 읽을 `incidents.jsonl` 생성
+- `incidents.jsonl` 입력
+- `recommended_playbook` 기준 대응 선택
+- Sentry issue 코멘트 기록
+- Slack/Discord 알림 기록
+- IP 차단 후보 기록
+- 코드, 시크릿, 안정성 검토 task 기록
 
 ## 실행
 
+SIEM 결과를 입력으로 실행
+
 ```bash
-python3 sentry_siem.py --demo
+python3 sentry_soar.py --incidents ../sentry-siem/incidents.jsonl --demo
 ```
 
-결과:
+SOAR 단독 샘플로 실행
 
-```text
-incidents.jsonl
+```bash
+python3 sentry_soar.py --demo
 ```
-
-이 파일을 `sentry-soar` 폴더에서 입력으로 사용합니다.

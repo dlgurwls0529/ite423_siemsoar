@@ -1,0 +1,30 @@
+{
+  "playbooks": {
+    "credential_or_auth_attack": [
+      "notify_security_channel",
+      "comment_sentry_issue",
+      "dry_run_ip_block"
+    ],
+    "payload_attack": [
+      "notify_security_channel",
+      "comment_sentry_issue",
+      "dry_run_ip_block",
+      "open_code_review_task"
+    ],
+    "admin_path_scan": [
+      "notify_security_channel",
+      "comment_sentry_issue",
+      "dry_run_ip_block"
+    ],
+    "sensitive_error_leak": [
+      "notify_security_channel",
+      "comment_sentry_issue",
+      "open_secret_review_task"
+    ],
+    "endpoint_error_spike": [
+      "notify_security_channel",
+      "comment_sentry_issue",
+      "open_stability_review_task"
+    ]
+  }
+}
