@@ -1,0 +1,36 @@
+{
+  "thresholds": {
+    "ip_error_burst": 4,
+    "auth_error_repeated": 3,
+    "endpoint_error_spike": 3,
+    "admin_scan_threshold": 3
+  },
+  "security_patterns": {
+    "sqli": [
+      "union select",
+      "or 1=1",
+      "sleep(",
+      "--"
+    ],
+    "xss": [
+      "<script",
+      "javascript:",
+      "onerror=",
+      "alert("
+    ],
+    "admin_paths": [
+      "/admin",
+      "/adm",
+      "/manager",
+      "/phpmyadmin"
+    ],
+    "sensitive_keywords": [
+      "password",
+      "token",
+      "authorization",
+      "secret",
+      "refresh_token",
+      "access_token"
+    ]
+  }
+}
